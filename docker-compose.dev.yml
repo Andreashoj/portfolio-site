@@ -1,0 +1,28 @@
+services:
+  frontend:
+    build:
+      context: ./frontend
+      target: development
+    volumes:
+      - ./frontend:/app
+      - /app/node_modules
+      - /app/.svelte-kit
+      - /app/build
+    ports:
+      - "5173:5173"
+    environment:
+      - NODE_ENV=development
+
+  backend:
+    build:
+      context: ./backend
+      target: development
+    volumes:
+      - ./backend:/src
+      - /src/bin
+      - /src/obj
+    ports:
+      - "5000:8080"
+    environment:
+      - ASPNETCORE_ENVIRONMENT=Development
+      - DOTNET_USE_POLLING_FILE_WATCHER=1
