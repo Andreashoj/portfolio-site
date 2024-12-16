@@ -3,6 +3,7 @@
 
     onMount(() => {
         fetch('http://localhost:5000/weatherforecast')
+        const el: HTMLButtonElement = "hello";
     })
 </script>
 <h1>Welcome to SvelteKit</h1>
