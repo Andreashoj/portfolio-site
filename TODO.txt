@@ -1,0 +1,21 @@
+1: Setup routes X
+    a: Homepage (who am I?) X
+    b: Work experience X
+    c: Blog page X
+2: Create contentful connection
+    a: Figure out what needs to set up on contentfuls side
+    b: Create connection in the frontend
+3: Validate content contentful and output it 
+    a: SSG a blog page and validate the output from Contentful
+    b: highlight code from contentful RTE with highlight.js or Prism.js
+4: Create some basic styling for the routes also layout components such as navbar footer etc.
+    a: Navbar component
+    b: Footer component
+
+(Optional)
+1: Figure out if the setup can be tweeked so i can trigger a build easier than rerunning the latest job in the pipeline
+1 (Outcome): This would make more sense when creating a new blog post etc.
+
+(Brainstorm for blogs to put on the page once done)
+Blog posts ideas:
+1: ADR documentation
