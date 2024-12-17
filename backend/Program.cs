@@ -1,9 +1,14 @@
+using backend.data;
+using Microsoft.EntityFrameworkCore;
+
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
+builder.Services.AddDbContext<AppDbContext>(options =>
+    options.UseNpgsql(builder.Configuration.GetConnectionString("DefaultConnection")));
 
 var  MyAllowSpecificOrigins = "_myAllowSpecificOrigins";
 
@@ -13,6 +18,7 @@ builder.Services.AddCors(options =>
         policy  =>
         {
             policy.WithOrigins("http://localhost:5173");
+            policy.WithOrigins("http://localhost:5000");
         });
 });
 

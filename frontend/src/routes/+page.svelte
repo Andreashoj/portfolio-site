@@ -2,8 +2,7 @@
     import { onMount } from "svelte";
 
     onMount(() => {
-        fetch('http://localhost:5000/weatherforecast')
-        const el: HTMLButtonElement = "hello";
+        fetch('/api/weatherforecast')
     })
 </script>
 <h1>Welcome to SvelteKit - muslinge pigen her</h1>

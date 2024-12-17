@@ -1,28 +1,14 @@
 services:
-  frontend:
-    build:
-      context: ./frontend
-      target: development
+  db:
+    image: postgres:16-alpine
     volumes:
-      - ./frontend:/app
-      - /app/node_modules
-      - /app/.svelte-kit
-      - /app/build
-    ports:
-      - "5173:5173"
+      - postgres_data:/var/lib/postgresql/data
     environment:
-      - NODE_ENV=development
-
-  backend:
-    build:
-      context: ./backend
-      target: development
-    volumes:
-      - ./backend:/src
-      - /src/bin
-      - /src/obj
+      POSTGRES_USER: user
+      POSTGRES_PASSWORD: password
+      POSTGRES_DB: db
     ports:
-      - "5000:8080"
-    environment:
-      - ASPNETCORE_ENVIRONMENT=Development
-      - DOTNET_USE_POLLING_FILE_WATCHER=1
+      - "5432:5432"
+      
+volumes:
+  postgres_data:
