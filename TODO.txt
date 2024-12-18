@@ -14,9 +14,24 @@
 5: Create blog routes with slugs from sanity [DONE]
     a: route with blog/[slug] should be generated [DONE]
     b: test on prod that it works, and confirm the ssg is working aswell [IN PROGRESS]
-6: Move the blog content renderer out to its own component
-7: Use that component on the blog slug site
-
+6: Move the blog content renderer out to its own component [DONE]
+7: Use that component on the blog slug site [DONE]
+8: Insert the correct fonts
+9: Navbar styling
+    a: Create navbar with SoMe links
+    b: Navbar links
+10: Homepage header
+    a: name
+    b: job description
+    c: image or visual thingy
+11: Tech stack  
+    a: check if there is an icon library for the tech icons
+        aa: if not, keep it plain text  
+12: Recent posts
+    a: list last 2 recent posts
+    b: figure out how to count views on the posts
+        ba: looks like you can create a combination of SSG and SSR in +page.ts, this would be great for this feature
+13: Add umami (page analytics)
 
 (Optional)
 1 (Problem) : Figure out if the setup can be tweeked so i can trigger a build easier than rerunning the latest job in the pipeline
