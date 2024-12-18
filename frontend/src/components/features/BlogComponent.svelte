@@ -11,7 +11,9 @@ import 'prismjs/plugins/line-numbers/prism-line-numbers.js';
 import { onMount } from "svelte";
 
 export let content: any;
-
+onMount(() => {
+    Prism.highlightAll();
+});
 </script>
 
 {@html renderContent(content)}
