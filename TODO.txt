@@ -2,9 +2,9 @@
     a: Homepage (who am I?) X
     b: Work experience X
     c: Blog page X
-2: Create contentful connection
-    a: Figure out what needs to set up on contentfuls side
-    b: Create connection in the frontend
+2: Create contentful connection x
+    a: Figure out what needs to set up on contentfuls side x
+    b: Create connection in the frontend x
 3: Validate content contentful and output it 
     a: SSG a blog page and validate the output from Contentful
     b: highlight code from contentful RTE with highlight.js or Prism.js

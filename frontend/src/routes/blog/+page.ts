@@ -1,5 +1,7 @@
-export function load(): { data: number } {
+export function load({ data }) {
     return {
-        data: 1
+        posts: data.posts.map(post => ({
+            ...post,
+        }))
     }
 }

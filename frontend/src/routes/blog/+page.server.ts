@@ -1,13 +1,16 @@
 // src/routes/blog/+page.server.ts
-import client from '$lib/contentful'
+import { client } from '$lib/sanity'
 
 export async function load() {
-    const response = await client.getEntries({
-        content_type: 'article'  // Your content type ID
-    })
-
-    console.log(response.items[0]);
-    return {
-        posts: response.items
-    }
+    const posts = await client.fetch(`
+        *[_type == "post"] {
+            title,
+            slug,
+            body,
+            publishedAt,
+            "author": author->name
+        }
+    `)
+    console.log(posts)
+    return { posts }
 }
