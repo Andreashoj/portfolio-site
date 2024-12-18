@@ -4,7 +4,7 @@ import { toHTML } from '@portabletext/to-html'
 import Prism from 'prismjs'
 import 'prismjs/components/prism-typescript'
 
-export function renderContent(blocks) {
+export function renderContent(blocks: any) {
     const html = toHTML(blocks, {
         components: {
             types: {
@@ -15,20 +15,21 @@ export function renderContent(blocks) {
                         'typescript'
                     )
                     return `
-                <div class="code-window">
-                    <div class="code-header">
-                        <div class="window-buttons">
-                            <span class="close"></span>
-                            <span class="minimize"></span>
-                            <span class="maximize"></span>
+                        <div class="code-window">
+                            <div class="code-header">
+                                <div class="window-buttons">
+                                    <span class="close"></span>
+                                    <span class="minimize"></span>
+                                    <span class="maximize"></span>
+                                </div>
+                                <div class="tab">
+                                    <span class="filename">${value.filename}</span>
+                                </div>
+                                <span class="language">${value.language}</span>
+                            </div>
+                            <pre class="line-numbers"><code class="language-typescript">${highlighted}</code></pre>
                         </div>
-                        <div class="tab">
-                            <span class="filename">example.${value.filename}</span>
-                        </div>
-                        <span class="language">${value.language}</span>
-                    </div>
-                    <pre><code class="language-typescript">${highlighted}</code></pre>
-                </div>                    `
+                            `
                 }
             }
         }

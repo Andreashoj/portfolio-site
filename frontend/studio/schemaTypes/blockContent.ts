@@ -54,7 +54,9 @@ export default defineType({
           { title: 'HTML', value: 'html' },
           { title: 'CSS', value: 'css' },
           { title: 'Python', value: 'python' },
-          { title: 'Bash', value: 'bash' }
+          { title: 'Bash', value: 'bash' },
+          { title: 'C#', value: 'csharp' },
+          { title: '.NET', value: 'csharp' } 
         ],
         withFilename: true
       }

@@ -11,6 +11,5 @@ export async function load() {
             "author": author->name
         }
     `)
-    console.log(posts)
     return { posts }
 }
