@@ -1,9 +1,9 @@
-export const prerender = true
+export const prerender = true;
 
 export function load({ data }) {
-    return {
-        posts: data.posts.map(post => ({
-            ...post,
-        }))
-    }
+	return {
+		posts: data.posts.map((post) => ({
+			...post
+		}))
+	};
 }
