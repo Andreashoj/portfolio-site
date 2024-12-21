@@ -16,11 +16,16 @@
     b: test on prod that it works, and confirm the ssg is working aswell [IN PROGRESS]
 6: Move the blog content renderer out to its own component [DONE]
 7: Use that component on the blog slug site [DONE]
-8: Insert the correct fonts
-9: Navbar styling
-    a: Create navbar with SoMe links
-    b: Navbar links
-10: Homepage header
+8: Insert the correct fonts [DONE] 
+9: Navbar styling [DONE]
+    a: Create navbar with SoMe links [DONE]
+    b: Navbar links [DONE]
+10: Footer [DONE]
+    a: link to source code [DONE]
+    b: should be able to toggle dark/light mode [DONE]
+    c: project code display like github [DONE]
+    d: update header code to show both light and darkmode style [DONE]
+10: Homepage header 
     a: name
     b: job description
     c: image or visual thingy

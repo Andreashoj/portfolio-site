@@ -4,7 +4,7 @@
 </script>
 
 <footer
-	class="flex justify-center border-t border-gray-200 bg-gray-100 px-5 py-12 lg:px-0 dark:border-gray-700 dark:bg-gray-900"
+	class="flex justify-center border-t border-gray-200 bg-gray-100 px-5 py-12 dark:border-gray-700 dark:bg-gray-900 xl:px-0"
 >
 	<div class="grid max-w-7xl grid-cols-10">
 		<div class="col-span-4">

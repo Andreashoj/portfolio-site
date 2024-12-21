@@ -17,8 +17,10 @@
 <div class="flex min-h-screen flex-col">
 	<Navbar />
 
-	<main class="flex-1 pt-16">
-		{@render children()}
+	<main class="flex flex-1 justify-center bg-slate-100 px-5 pt-16 dark:bg-slate-900 xl:px-0">
+		<div class="flex max-w-7xl flex-1">
+			{@render children()}
+		</div>
 	</main>
 
 	<Footer />
