@@ -18,7 +18,7 @@
 	<Navbar />
 
 	<main class="flex flex-1 justify-center bg-slate-100 px-5 pt-16 dark:bg-slate-900 xl:px-0">
-		<div class="flex max-w-7xl flex-1">
+		<div class="max-w-7xl w-full">
 			{@render children()}
 		</div>
 	</main>
