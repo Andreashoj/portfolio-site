@@ -29,9 +29,9 @@
     a: name [DONE]
     b: job description [DONE]
     c: image or visual thingy [DONE]
-11: Tech stack  
-    a: check if there is an icon library for the tech icons
-        aa: if not, keep it plain text  
+11: Tech stack [DONE]
+    a: check if there is an icon library for the tech icons [DONE]
+        aa: if not, keep it plain text [DONE]
 12: Recent posts
     a: list last 2 recent posts
     b: figure out how to count views on the posts

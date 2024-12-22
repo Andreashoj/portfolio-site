@@ -1,10 +1,9 @@
-// src/routes/blog/+page.server.ts
 import { client } from '$lib/sanity';
 
 export const prerender = true;
 
 export async function load() {
-	const posts = await client.fetch(`
+	const posts: SanityPost[] = await client.fetch(`
         *[_type == "post"] {
             title,
             slug,

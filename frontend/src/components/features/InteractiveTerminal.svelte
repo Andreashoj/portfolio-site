@@ -175,7 +175,7 @@ Type 'contact' to get in touch about collaborations!`,
 	<!-- Terminal Content -->
 	<div
 		bind:this={terminalElement}
-		class="h-96 overflow-y-auto bg-white p-4 font-mono text-sm text-gray-800 transition-colors dark:bg-gray-900 dark:text-gray-300"
+		class="h-80 overflow-y-auto bg-white p-4 font-mono text-sm text-gray-800 transition-colors dark:bg-gray-900 dark:text-gray-300"
 	>
 		{#each history as line}
 			<div class="mb-1 whitespace-pre-wrap">{line}</div>

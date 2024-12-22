@@ -4,7 +4,7 @@
 </script>
 
 <nav
-	class="fixed top-0 flex h-16 w-full justify-center border-b border-gray-200 bg-gray-100 px-5 dark:border-gray-700 dark:bg-gray-900 xl:px-0"
+	class="fixed top-0 z-50 flex h-16 w-full justify-center border-b border-gray-200 bg-gray-100 px-5 dark:border-gray-700 dark:bg-gray-900 xl:px-0"
 >
 	<div class="grid max-w-7xl grid-cols-10 items-center">
 		<div class="flex gap-4 dark:text-gray-300">

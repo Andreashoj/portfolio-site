@@ -17,8 +17,8 @@
 <div class="flex min-h-screen flex-col">
 	<Navbar />
 
-	<main class="flex flex-1 justify-center bg-slate-100 px-5 pt-16 dark:bg-slate-900 xl:px-0">
-		<div class="max-w-7xl w-full">
+	<main class="flex flex-1 justify-center bg-slate-100 px-5 py-16 dark:bg-slate-900 xl:px-0">
+		<div class="w-full max-w-7xl">
 			{@render children()}
 		</div>
 	</main>
