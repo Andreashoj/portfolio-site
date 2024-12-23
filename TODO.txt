@@ -32,9 +32,9 @@
 11: Tech stack [DONE]
     a: check if there is an icon library for the tech icons [DONE]
         aa: if not, keep it plain text [DONE]
-12: Recent posts
-    a: list last 2 recent posts
-    b: figure out how to count views on the posts
+12: Recent posts [DONE] 
+    a: list last 2 recent posts [DONE] 
+    b: figure out how to count views on the posts  
         ba: looks like you can create a combination of SSG and SSR in +page.ts, this would be great for this feature
 13: Add umami (page analytics)
 
