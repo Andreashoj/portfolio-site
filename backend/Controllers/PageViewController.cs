@@ -11,7 +11,13 @@ public class PageViewController(IPageViewService pageViewService) : ControllerBa
     public async Task<IActionResult> PageViews([FromBody] string[] slugs)
     {
         var blogs = await pageViewService.GetBatchAsync(slugs);
-
         return Ok(blogs);
+    }
+    
+    [HttpPost("increment")]
+    public async Task<IActionResult> PageViews([FromBody] string slug)
+    {
+        var blog = await pageViewService.IncrementAsync(slug);
+        return Ok(blog);
     }
 }

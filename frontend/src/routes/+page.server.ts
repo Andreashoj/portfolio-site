@@ -12,5 +12,6 @@ export async function load() {
             "author": author->name
         }
     `);
+
 	return { posts };
 }

@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { LucideArrowUp } from 'lucide-svelte';
+	import { Eye, LucideArrowUp } from 'lucide-svelte';
 
 	export let post: SanityPost;
 </script>
@@ -14,7 +14,19 @@
 	></a>
 	<span class="text-sm text-slate-600">{post.publishedAt}</span>
 	<h2 class="mt-1 text-xl font-semibold capitalize">{post.title}</h2>
-	<p class="mt-2 text-sm">4002 views</p>
+	<span>
+		{#if post.pageView != null}
+			{post.pageView ?? 0} views
+		{:else}
+			<div class="inline-flex items-center gap-2 text-gray-500">
+				<span
+					class="animate-pulse bg-gradient-to-r from-gray-200 to-gray-300 bg-clip-text text-transparent"
+				>
+					Loading views
+				</span>
+			</div>
+		{/if}
+	</span>
 
 	<LucideArrowUp
 		class="absolute right-4 top-4 h-4 w-4 rotate-45 transition group-hover:rotate-90 dark:text-slate-500"

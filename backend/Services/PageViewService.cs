@@ -6,27 +6,6 @@ namespace backend.Services;
 
 public class PageViewService (AppDbContext context) : IPageViewService
 {
-    public async Task<BlogModel> GetAsync(string slug)
-    {
-        var result = await context.Blogs.FirstOrDefaultAsync(b => b.Slug == slug);
-
-        if (result is null)
-        {
-            var blogPost = new BlogModel
-            {
-                Slug = slug,
-                PageView = 1
-            };
-
-            context.Blogs.Add(blogPost);
-            await context.SaveChangesAsync();
-
-            return blogPost;
-        }
-        
-        return result;
-    }
-
     public async Task<List<BlogModel>> GetBatchAsync(string[] slugs)
     {
         var existingBlogs = await context.Blogs.Where(b => slugs.Contains(b.Slug)).ToListAsync();
@@ -44,5 +23,18 @@ public class PageViewService (AppDbContext context) : IPageViewService
         await context.SaveChangesAsync(); 
         
         return [.. existingBlogs, .. blogModels];
+    }
+    
+    public async Task<BlogModel> IncrementAsync(string slug)
+    {
+        var blogPost = await context.Blogs.FirstOrDefaultAsync(b => b.Slug == slug);
+
+        if (blogPost is null)
+            throw new ArgumentNullException();
+
+        blogPost.PageView++;
+        await context.SaveChangesAsync();
+        
+        return blogPost;
     }
 }

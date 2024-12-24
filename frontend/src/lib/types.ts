@@ -5,6 +5,7 @@ interface SanityPost {
 	body: any;
 	publishedAt: string;
 	slug: Slug;
+	pageView?: number;
 }
 
 interface Slug {
@@ -15,4 +16,10 @@ interface Slug {
 // For your page data
 interface PageData {
 	post: SanityPost;
+}
+
+interface PageView {
+	id: string;
+	slug: string;
+	pageView: number;
 }
