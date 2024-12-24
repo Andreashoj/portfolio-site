@@ -23,6 +23,4 @@ jobs:
           script: |
             cd /root/portfolio-site
             git pull
-            docker compose down -v  
-            docker volume prune -f 
             docker compose -f docker-compose.yml up -d --build
