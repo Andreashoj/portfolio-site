@@ -11,7 +11,7 @@
 	<div class="w-full">
 		<h1 class="text-6xl font-light">Hi, I'm <span class="block font-black">Andreas</span></h1>
 		<h3 class="mt-3 bg-gray-800 p-1.5 indent-1.5 text-2xl text-slate-50 dark:bg-blue-500">
-			Software Developer
+			Muslinge Pigen
 		</h3>
 	</div>
 
