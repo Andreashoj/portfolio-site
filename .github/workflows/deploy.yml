@@ -20,9 +20,9 @@ jobs:
           host: ${{ secrets.SERVER_HOST }}
           username: ${{ secrets.SERVER_USERNAME }}
           key: ${{ secrets.SERVER_SSH_KEY }}
-          script: |
-            cd /root/portfolio-site
-            git pull
-            docker compose down
-            docker volume rm static-files || true
-            docker compose -f docker-compose.yml up -d --build
+        script: |
+          cd /root/portfolio-site
+          git pull
+          docker compose down
+          docker volume rm portfolio-site_static-files || true
+          docker compose -f docker-compose.yml up -d --build
