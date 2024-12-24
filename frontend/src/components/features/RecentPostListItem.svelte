@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { Eye, LucideArrowUp } from 'lucide-svelte';
+	import { LucideArrowUp } from 'lucide-svelte';
 
 	export let post: SanityPost;
 </script>

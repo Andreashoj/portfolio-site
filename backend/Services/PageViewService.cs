@@ -30,7 +30,16 @@ public class PageViewService (AppDbContext context) : IPageViewService
         var blogPost = await context.Blogs.FirstOrDefaultAsync(b => b.Slug == slug);
 
         if (blogPost is null)
-            throw new ArgumentNullException();
+        {
+            blogPost = new BlogModel
+            {
+                Slug = slug,
+                PageView = 0
+            };
+            
+            await context.AddAsync(blogPost);
+        }
+            
 
         blogPost.PageView++;
         await context.SaveChangesAsync();
