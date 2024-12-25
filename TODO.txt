@@ -36,7 +36,18 @@
     a: list last 2 recent posts [DONE] 
     b: figure out how to count views on the posts [DONE] 
         ba: looks like you can create a combination of SSG and SSR in +page.ts, this would be great for this feature [DONE]
-13: Add umami (page analytics) [DONE]
+13: Add Umami (page analytics) [DONE]
+14: Fix mobile tech stack list alignment
+15: Fix mobile layout in footer
+16: Create blog list 
+17: Create work experience page
+18: Create API key to use in header and secure the backend endpoints
+---
+Blog post
+Breadcrumbs, Oauth, Comment section, likes
+
+
+
 
 (Optional)
 1 (Problem) : Figure out if the setup can be tweeked so i can trigger a build easier than rerunning the latest job in the pipeline

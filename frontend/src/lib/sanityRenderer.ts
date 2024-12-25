@@ -1,20 +1,22 @@
 // src/lib/sanityRenderer.ts
 // src/lib/sanityRenderer.ts
-import { toHTML } from '@portabletext/to-html'
-import Prism from 'prismjs'
-import 'prismjs/components/prism-typescript'
+import { toHTML } from '@portabletext/to-html';
+import Prism from 'prismjs';
+import 'prismjs/components/prism-typescript';
 
 export function renderContent(blocks: any) {
-    const html = toHTML(blocks, {
-        components: {
-            types: {
-                code: ({ value }) => {
-                    const highlighted = Prism.highlight(
-                        value.code,
-                        Prism.languages.typescript,
-                        'typescript'
-                    )
-                    return `
+	const html = toHTML(blocks, {
+		components: {
+			types: {
+				code: ({ value }) => {
+					const highlighted = Prism.highlight(value.code, Prism.languages.typescript, 'typescript');
+
+					// Add data-line attribute for highlighting
+					const highlightAttr = value.highlightedLines
+						? `data-line="${value.highlightedLines.join(',')}"`
+						: '';
+
+					return `
                         <div class="code-window">
                             <div class="code-header">
                                 <div class="window-buttons">
@@ -27,12 +29,12 @@ export function renderContent(blocks: any) {
                                 </div>
                                 <span class="language">${value.language}</span>
                             </div>
-                            <pre class="line-numbers"><code class="language-typescript">${highlighted}</code></pre>
+                            <pre class="line-numbers" ${highlightAttr}><code class="language-typescript">${highlighted}</code></pre>
                         </div>
-                            `
-                }
-            }
-        }
-    })
-    return html
+                    `;
+				}
+			}
+		}
+	});
+	return html;
 }

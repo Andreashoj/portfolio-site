@@ -8,6 +8,8 @@
 	import 'prismjs/components/prism-markup'; // for HTML
 	import 'prismjs/plugins/line-numbers/prism-line-numbers.css'; // Include the CSS for line numbers
 	import 'prismjs/plugins/line-numbers/prism-line-numbers.js';
+	import 'prismjs/plugins/line-highlight/prism-line-highlight.css';
+	import 'prismjs/plugins/line-highlight/prism-line-highlight.js';
 	import { onMount } from 'svelte';
 
 	export let content: any;
@@ -19,6 +21,14 @@
 {@html renderContent(content)}
 
 <style>
+	:global(pre[class*='language-']) {
+		margin: 0 !important;
+	}
+
+	:global(.line-highlight) {
+		background: rgba(50, 205, 86, 0.1) !important;
+	}
+
 	:global(.code-container) {
 		position: relative;
 	}
@@ -32,7 +42,7 @@
 	}
 
 	:global(.code-header) {
-		background: #3d3d3d;
+		background: #2d2d2d;
 		padding: 8px 16px;
 		display: flex;
 		justify-content: space-between;
@@ -68,16 +78,6 @@
 		font-size: 0.9rem;
 	}
 
-	:global(pre) {
-		margin: 0;
-		padding: 1.5rem;
-	}
-
-	:global(pre code) {
-		font-family: 'JetBrains Mono', monospace;
-		font-size: 0.9rem;
-		line-height: 1.5;
-	}
 	:global(.tab) {
 		background: #363636;
 		padding: 4px 12px;
@@ -96,9 +96,5 @@
 		padding: 8px 16px;
 		display: flex;
 		align-items: center;
-	}
-
-	:global(.line-numbers-rows > span) {
-		padding-bottom: 2.4px;
 	}
 </style>
