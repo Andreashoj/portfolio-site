@@ -1,7 +1,6 @@
 export const prerender = true;
 
 export function load({ data }) {
-	console.log(data.posts[0].slug);
 	return {
 		posts: getLatestPosts(
 			data.posts.map(

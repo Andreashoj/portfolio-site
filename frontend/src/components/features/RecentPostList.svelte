@@ -15,7 +15,6 @@
 
 		posts = posts.map((post) => {
 			const blogPageView = data.find((p) => p.slug == post.slug.current);
-			console.log(blogPageView);
 			return {
 				...post,
 				pageView: blogPageView!.pageView

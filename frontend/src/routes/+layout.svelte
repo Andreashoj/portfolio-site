@@ -10,8 +10,14 @@
 	<link rel="preconnect" href="https://fonts.gstatic.com" />
 	<link
 		href="https://fonts.googleapis.com/css2?family=Spectral:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;0,800;1,200;1,300;1,400;1,500;1,600;1,700;1,800&display=swap"
-		rel="stylesheet"
 	/>
+	{#if import.meta.env.PROD}
+		<script
+			defer
+			src="https://cloud.umami.is/script.js"
+			data-website-id="67243811-cbc8-450c-812b-21a115dd41f0"
+		></script>
+	{/if}
 </svelte:head>
 
 <div class="flex min-h-screen flex-col">
