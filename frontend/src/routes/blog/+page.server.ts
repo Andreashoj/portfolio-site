@@ -4,13 +4,18 @@ import { client } from '$lib/sanity';
 export const prerender = true;
 
 export async function load() {
-	const posts = await client.fetch(`
+	const posts: SanityPost[] = await client.fetch(`
         *[_type == "post"] {
             title,
             slug,
             body,
             publishedAt,
-            "author": author->name
+            description,
+            "author": author->name,
+            "categories": categories[]->{ 
+                title,
+                description
+            }
         }
     `);
 	return { posts };

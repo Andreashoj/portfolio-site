@@ -1,28 +1,11 @@
+import { formatPostDate } from '$lib/dateFormatter';
+import { getSortedPostsByDate } from '$lib/dateSorting';
+
 export const prerender = true;
 
 export function load({ data }) {
+	const formattedPosts = data.posts.map((post) => formatPostDate(post));
 	return {
-		posts: getLatestPosts(
-			data.posts.map(
-				(post) =>
-					({
-						...post,
-						publishedAt: post.publishedAt
-							? new Date(post.publishedAt).toLocaleDateString('en-US', {
-									year: 'numeric',
-									month: 'long',
-									day: 'numeric'
-								})
-							: null
-					}) as SanityPost
-			)
-		)
+		posts: getSortedPostsByDate(formattedPosts).slice(0, 2)
 	};
 }
-
-const getLatestPosts = (posts: SanityPost[]) => {
-	return posts
-		.filter((post) => post.publishedAt !== null)
-		.sort((a, b) => new Date(b.publishedAt).getTime() - new Date(a.publishedAt).getTime())
-		.slice(0, 2);
-};
