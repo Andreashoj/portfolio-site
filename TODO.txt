@@ -39,8 +39,8 @@
 13: Add Umami (page analytics) [DONE]
 14: Fix mobile tech stack list alignment [DONE]
 15: Fix mobile layout in footer [DONE]
-16: Create blog list 
-17: Create work experience page
+16: Create blog list [DONE]
+17: Create work experience page [DONE]
 18: Create API key to use in header and secure the backend endpoints
 ---
 Blog post
