@@ -58,7 +58,9 @@
 	</script>
 </svelte:head>
 
-<div class="col-span-2 col-start-9 flex h-10 w-full items-center justify-end gap-1">
+<div
+	class="col-span-3 mt-6 flex h-10 w-full items-center justify-end gap-1 md:col-span-2 md:col-start-9 md:mt-0"
+>
 	<div class="flex rounded-full bg-gray-200 p-1 dark:bg-gray-800">
 		<button
 			class="rounded-full p-2 transition-all {currentTheme === 'light'

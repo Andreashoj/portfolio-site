@@ -37,7 +37,7 @@
     b: figure out how to count views on the posts [DONE] 
         ba: looks like you can create a combination of SSG and SSR in +page.ts, this would be great for this feature [DONE]
 13: Add Umami (page analytics) [DONE]
-14: Fix mobile tech stack list alignment
+14: Fix mobile tech stack list alignment [DONE]
 15: Fix mobile layout in footer
 16: Create blog list 
 17: Create work experience page
