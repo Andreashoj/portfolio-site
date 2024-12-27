@@ -12,11 +12,8 @@ WORKDIR /app
 COPY package*.json ./
 RUN npm install
 COPY . .
+RUN echo "PUBLIC_API_KEY=$PUBLIC_API_KEY" > .env
 RUN npm run build
-
-ARG VITE_PUBLIC_API_KEY
-ENV VITE_PUBLIC_API_KEY=${VITE_PUBLIC_API_KEY}
-RUN echo "VITE_PUBLIC_API_KEY is ${VITE_PUBLIC_API_KEY}"  # Debug statement:w
 
 # Production stage
 FROM nginx:alpine AS production
