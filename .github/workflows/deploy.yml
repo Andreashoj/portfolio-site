@@ -26,6 +26,11 @@ jobs:
             export DB_PASSWORD=${{ secrets.DB_PASSWORD }}
             export DB_NAME=${{ secrets.DB_NAME }}
             export PUBLIC_API_KEY=${{ secrets.PUBLIC_API_KEY }}   
+            echo "DB_HOST: $DB_HOST"
+            echo "DB_USER: $DB_USER"
+            echo "DB_PASSWORD: [hidden]"  # Hide sensitive information in logs
+            echo "DB_NAME: $DB_NAME"
+            echo "PUBLIC_API_KEY: $PUBLIC_API_KEY"
             cd /root/portfolio-site
             git pull
             docker compose down
