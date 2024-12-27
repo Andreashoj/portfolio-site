@@ -14,8 +14,8 @@ RUN npm install
 COPY . .
 RUN npm run build
 
-ARG PUBLIC_API_KEY
-ENV PUBLIC_API_KEY=${PUBLIC_API_KEY}
+ARG VITE_PUBLIC_API_KEY
+ENV VITE_PUBLIC_API_KEY=${VITE_PUBLIC_API_KEY}
 
 # Production stage
 FROM nginx:alpine AS production
