@@ -12,7 +12,24 @@ var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 builder.Services.AddDbContext<AppDbContext>(options =>
-    options.UseNpgsql(builder.Configuration.GetConnectionString("DefaultConnection")));
+{
+    string connectionString;
+    
+    if (builder.Environment.IsDevelopment())
+    {
+        connectionString = builder.Configuration.GetConnectionString("DefaultConnection");
+    }
+    else
+    {
+        connectionString = $"Host={Environment.GetEnvironmentVariable("DB_HOST")};" +
+                           $"Username={Environment.GetEnvironmentVariable("DB_USER")};" +
+                           $"Password={Environment.GetEnvironmentVariable("DB_PASSWORD")};" +
+                           $"Database={Environment.GetEnvironmentVariable("DB_NAME")}";
+    }
+    
+    options.UseNpgsql(connectionString);
+});
+
 builder.Services.AddControllers();
 
 // Services
