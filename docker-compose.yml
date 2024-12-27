@@ -12,7 +12,9 @@ services:
   frontend:
     build:
       context: ./frontend
-      target: production
+      target: production      
+      args:
+        PUBLIC_API_KEY: ${PUBLIC_API_KEY}
     environment:
       - PUBLIC_API_KEY=${PUBLIC_API_KEY}
     volumes:
