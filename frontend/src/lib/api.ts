@@ -1,4 +1,4 @@
-import { PUBLIC_API_KEY } from '$env/static/public';
+const PUBLIC_API_KEY = import.meta.env.VITE_PUBLIC_API_KEY;
 
 const createApiClient = (apiKey: string) => {
 	const fetchWithConfig = (endpoint: string, options: RequestInit = {}) => {

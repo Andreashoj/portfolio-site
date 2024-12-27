@@ -14,9 +14,9 @@ services:
       context: ./frontend
       target: production      
       args:
-        PUBLIC_API_KEY: ${PUBLIC_API_KEY}
+        VITE_PUBLIC_API_KEY: ${PUBLIC_API_KEY}
     environment:
-      - PUBLIC_API_KEY=${PUBLIC_API_KEY}
+      - VITE_PUBLIC_API_KEY=${PUBLIC_API_KEY}
     volumes:
       - static-files:/usr/share/nginx/html  # Same named volume
 
