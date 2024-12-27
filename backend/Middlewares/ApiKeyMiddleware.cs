@@ -1,14 +1,8 @@
 namespace backend.Middlewares;
 
-public class ApiKeyMiddleware
+public class ApiKeyMiddleware(RequestDelegate next, IWebHostEnvironment env)
 {
-    private readonly RequestDelegate _next;
     private const string APIKEY = "X-Api-Key";
-
-    public ApiKeyMiddleware(RequestDelegate next)
-    {
-        _next = next;
-    }
 
     public async Task InvokeAsync(HttpContext context)
     {
@@ -19,8 +13,18 @@ public class ApiKeyMiddleware
             return;
         }
 
-        var appSettings = context.RequestServices.GetRequiredService<IConfiguration>();
-        var apiKey = appSettings.GetValue<string>("ApiKey");
+        string apiKey;
+        if (env.IsDevelopment())
+        {
+            // Get from appsettings.json in development
+            var configuration = context.RequestServices.GetRequiredService<IConfiguration>();
+            apiKey = configuration["ApiKey"];
+        }
+        else
+        {
+            // Get from environment variable in production
+            apiKey = Environment.GetEnvironmentVariable("PUBLIC_API_KEY");
+        }
 
         if (!apiKey.Equals(extractedApiKey))
         {
@@ -29,6 +33,6 @@ public class ApiKeyMiddleware
             return;
         }
 
-        await _next(context); 
+        await next(context);
     }
 }
