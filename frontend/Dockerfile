@@ -16,6 +16,7 @@ RUN npm run build
 
 ARG VITE_PUBLIC_API_KEY
 ENV VITE_PUBLIC_API_KEY=${VITE_PUBLIC_API_KEY}
+RUN echo "VITE_PUBLIC_API_KEY is ${VITE_PUBLIC_API_KEY}"  # Debug statement:w
 
 # Production stage
 FROM nginx:alpine AS production
