@@ -7,7 +7,9 @@
 <div class="my-4 grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
 	{#each data.posts as post}
 		<a href="blog/{post.slug.current}" class="group relative">
-			<div class="flex h-64 flex-col rounded-lg border border-slate-800 dark:bg-gray-900">
+			<div
+				class="flex h-64 flex-col rounded-lg border border-slate-800 transition group-hover:border-slate-600 dark:bg-gray-900"
+			>
 				<div class="flex flex-1 flex-col p-6">
 					<!-- Date -->
 					<p class="mb-2 text-sm text-gray-500 dark:text-gray-400">
@@ -15,9 +17,7 @@
 					</p>
 
 					<!-- Title -->
-					<h2
-						class="mb-3 text-2xl font-bold text-gray-900 transition dark:text-white dark:group-hover:text-gray-400"
-					>
+					<h2 class="mb-3 text-2xl font-bold text-gray-900 transition dark:text-white">
 						{post.title}
 					</h2>
 

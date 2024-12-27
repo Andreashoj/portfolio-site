@@ -1,8 +1,10 @@
 using backend.Services;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.RateLimiting;
 
 namespace backend.Controllers;
 
+[EnableRateLimiting("fixed")]
 [ApiController]
 [Route("/pageview")]
 public class PageViewController(IPageViewService pageViewService) : ControllerBase

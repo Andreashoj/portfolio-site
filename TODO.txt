@@ -42,6 +42,8 @@
 16: Create blog list [DONE]
 17: Create work experience page [DONE]
 18: Create API key to use in header and secure the backend endpoints
+19: Backup docker database
+
 ---
 Blog post
 Breadcrumbs, Oauth, Comment section, likes

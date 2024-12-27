@@ -1,17 +1,12 @@
 <script lang="ts">
 	import BlogComponent from '$components/features/BlogComponent.svelte';
 	import { onMount } from 'svelte';
+	import { api } from '$lib/api';
 
 	export let data: PageData;
 
 	async function incrementPostCount() {
-		console.log(data);
-		const response = await fetch('/api/pageview/increment', {
-			method: 'POST',
-			headers: { 'Content-Type': 'application/json' },
-			body: JSON.stringify(data.post.slug.current)
-		});
-
+		const response = await api.post('/pageview/increment', data.post.slug.current);
 		const result: PageView = await response.json();
 		data.post.pageView = result.pageView;
 	}

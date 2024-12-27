@@ -1,5 +1,8 @@
+using System.Threading.RateLimiting;
 using backend.data;
 using backend.Services;
+using backend.Middlewares;
+using Microsoft.AspNetCore.RateLimiting;
 using Microsoft.EntityFrameworkCore;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -27,6 +30,18 @@ builder.Services.AddCors(options =>
         });
 });
 
+builder.Services.AddRateLimiter(options =>
+{
+    options.RejectionStatusCode = 429; // Too Many Requests
+    options.AddFixedWindowLimiter("fixed", opt =>
+    {
+        opt.PermitLimit = 100;
+        opt.Window = TimeSpan.FromMinutes(1);  
+        opt.QueueProcessingOrder = QueueProcessingOrder.OldestFirst;
+        opt.QueueLimit = 0;  
+    });
+});
+
 
 var app = builder.Build();
 app.UseCors(MyAllowSpecificOrigins);
@@ -43,5 +58,7 @@ if (app.Environment.IsDevelopment())
 
 app.UseHttpsRedirection();
 app.MapControllers();
+app.UseApiKeyMiddleware();
+app.UseRateLimiter();
 
 app.Run();
