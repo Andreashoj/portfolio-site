@@ -23,7 +23,9 @@ jobs:
           script: |
             cd /root/portfolio-site
             git pull
-            
+            echo "Checking env vars..."
+            echo "PUBLIC_API_KEY is set: $(if [ ! -z "$PUBLIC_API_KEY" ]; then echo "yes"; else echo "no"; fi)"
+    
             echo "PUBLIC_API_KEY=${{ secrets.PUBLIC_API_KEY }}" > .env
             echo "DB_HOST=${{ secrets.DB_HOST }}" >> .env
             echo "DB_USER=${{ secrets.DB_USER }}" >> .env
