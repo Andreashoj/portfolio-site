@@ -12,7 +12,7 @@ WORKDIR /app
 COPY package*.json ./
 RUN npm install
 COPY . .
-RUN echo "PUBLIC_API_KEY=$PUBLIC_API_KEY" > .env
+RUN echo "VITE_PUBLIC_API_KEY=$VITE_PUBLIC_API_KEY" > .env
 RUN npm run build
 
 # Production stage
