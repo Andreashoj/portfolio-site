@@ -203,7 +203,6 @@ Type 'contact' to get in touch about collaborations!`,
 					placeholder="Type 'help' for commands..."
 				/>
 
-				<!-- Vim-style cursor -->
 				<div
 					class={`absolute top-0 bg-gray-800 opacity-75 dark:bg-gray-400 ${
 						focused ? 'animate-vim-cursor' : 'opacity-0'
