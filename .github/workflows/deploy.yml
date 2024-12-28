@@ -26,9 +26,8 @@ jobs:
             echo "DB_USER=${{ secrets.DB_USER }}" >> .env
             echo "DB_PASSWORD=${{ secrets.DB_PASSWORD }}" >> .env
             echo "DB_NAME=${{ secrets.DB_NAME }}" >> .env
-            
+            cat .env
             docker compose down
             docker volume rm portfolio-site_static-files || true
             docker compose -f docker-compose.yml up -d --build
-            
             rm .env
