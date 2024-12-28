@@ -10,8 +10,8 @@ export default defineConfig({
 				rewrite: (path) => path.replace(/^\/api/, '')
 			}
 		}
-	},
-	define: {
-		'import.meta.env.VITE_PUBLIC_API_KEY': JSON.stringify(process.env.VITE_PUBLIC_API_KEY)
 	}
+	// define: {
+	// 	'import.meta.env.VITE_PUBLIC_API_KEY': JSON.stringify(process.env.VITE_PUBLIC_API_KEY)
+	// }
 });
