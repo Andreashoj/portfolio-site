@@ -12,7 +12,10 @@ WORKDIR /app
 COPY package*.json ./
 RUN npm install
 COPY . .
+# Make sure Vite can see this during build
+ENV VITE_PUBLIC_API_KEY=${PUBLIC_API_KEY}
 RUN echo "VITE_PUBLIC_API_KEY=$VITE_PUBLIC_API_KEY" > .env
+RUN cat .env 
 RUN npm run build
 
 # Production stage

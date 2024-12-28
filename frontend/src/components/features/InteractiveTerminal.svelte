@@ -209,7 +209,7 @@ Type 'contact' to get in touch about collaborations!`,
 						focused ? 'animate-vim-cursor' : 'opacity-0'
 					}`}
 					style="left: calc(0.25rem + {currentText.length}ch); width: 1ch; height: 100%;"
-				/>
+				></div>
 			</div>
 		</div>
 	</div>

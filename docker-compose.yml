@@ -14,7 +14,7 @@ services:
       context: ./frontend
       target: production      
       args:
-        VITE_PUBLIC_API_KEY: ${PUBLIC_API_KEY}
+        PUBLIC_API_KEY: ${PUBLIC_API_KEY}
     environment:
       - VITE_PUBLIC_API_KEY=${PUBLIC_API_KEY}
     volumes:
