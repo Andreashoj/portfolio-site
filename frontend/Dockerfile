@@ -14,7 +14,7 @@ RUN npm install
 COPY . .
 
 # Debug: Print env value
-RUN echo "ENV VITE_PUBLIC_API_KEY value: ${VITE_PUBLIC_API_KEY}"
+RUN echo "ENV VITE_PUBLIC_API_KEY value: ${PUBLIC_API_KEY}"
 
 # Make sure Vite can see this during build
 ENV VITE_PUBLIC_API_KEY=${PUBLIC_API_KEY}
