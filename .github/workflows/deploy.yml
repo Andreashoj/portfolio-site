@@ -28,18 +28,11 @@ jobs:
             cd /root/portfolio-site
             git pull
             
-            PUBLIC_API_KEY="${{ secrets.PUBLIC_API_KEY }}"
-            export PUBLIC_API_KEY
-            
-            echo "Checking env vars..."
-            echo "PUBLIC_API_KEY is set: $(if [ ! -z "$PUBLIC_API_KEY" ]; then echo "yes"; else echo "no"; fi)"
-    
             echo "PUBLIC_API_KEY=${{ secrets.PUBLIC_API_KEY }}" > .env
             echo "DB_HOST=${{ secrets.DB_HOST }}" >> .env
             echo "DB_USER=${{ secrets.DB_USER }}" >> .env
             echo "DB_PASSWORD=${{ secrets.DB_PASSWORD }}" >> .env
             echo "DB_NAME=${{ secrets.DB_NAME }}" >> .env
-            cat .env
             
             docker compose down
             docker volume rm portfolio-site_static-files || true
