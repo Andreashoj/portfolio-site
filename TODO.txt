@@ -42,13 +42,13 @@
 16: Create blog list [DONE]
 17: Create work experience page [DONE]
 18: Create API key to use in header and secure the backend endpoints [DONE]
-19: Backup docker database
-
----
-Blog post
-Breadcrumbs, Oauth, Comment section, likes
-
-
+19: Backup docker database [DONE]
+20: Breadcrumbs that shows current blog post name and the previous step which is the blog list [DONE]
+21: Show the blog post title and description + the views + category [DONE]
+22: The actual blog post, check how everything looks and make adjustments
+23: Create a like button, this should not require any authentication
+24: Create Oauth 
+25: Create comment section, and figure out how detailed it should be. (replies, likes etc.)
 
 
 (Optional)

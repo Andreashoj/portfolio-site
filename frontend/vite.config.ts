@@ -11,7 +11,4 @@ export default defineConfig({
 			}
 		}
 	}
-	// define: {
-	// 	'import.meta.env.VITE_PUBLIC_API_KEY': JSON.stringify(process.env.VITE_PUBLIC_API_KEY)
-	// }
 });

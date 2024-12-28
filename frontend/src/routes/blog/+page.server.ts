@@ -11,7 +11,6 @@ export async function load() {
             body,
             publishedAt,
             description,
-            "author": author->name,
             "categories": categories[]->{ 
                 title,
                 description

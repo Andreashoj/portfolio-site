@@ -19,7 +19,10 @@ export async function load({ params }) {
             body,
             publishedAt,
             slug,
-            "author": author->name
+            "categories": categories[]->{ 
+                title,
+                description
+            }
         }
     `,
 		{ slug: params.slug }
