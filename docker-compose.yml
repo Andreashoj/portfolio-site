@@ -18,7 +18,7 @@ services:
     environment:
       - PUBLIC_API_KEY=${PUBLIC_API_KEY}
     volumes:
-      - static-files:/usr/share/nginx/html  # Same named volume
+      - static-files:/usr/share/nginx/html  
 
   backend:
     build:
