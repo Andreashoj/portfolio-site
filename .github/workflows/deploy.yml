@@ -23,6 +23,10 @@ jobs:
           script: |
             cd /root/portfolio-site
             git pull
+            
+            PUBLIC_API_KEY="${{ secrets.PUBLIC_API_KEY }}"
+            export PUBLIC_API_KEY
+            
             echo "Checking env vars..."
             echo "PUBLIC_API_KEY is set: $(if [ ! -z "$PUBLIC_API_KEY" ]; then echo "yes"; else echo "no"; fi)"
     
