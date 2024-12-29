@@ -18,7 +18,9 @@
 	});
 </script>
 
-{@html renderContent(content)}
+<div class="text-gray-800 dark:text-gray-200">
+	{@html renderContent(content)}
+</div>
 
 <style>
 	:global(pre[class*='language-']) {

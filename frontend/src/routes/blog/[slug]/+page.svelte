@@ -15,21 +15,21 @@
 	onMount(incrementPostCount);
 </script>
 
-<div class="mt-4 flex items-center capitalize">
-	<a href="/blog" class="text-gray-400 transition hover:text-white">Blogs</a>
-	<ChevronRight class="mx-2 h-4 w-4" />
-	<span>{data.post.title}</span>
-</div>
+<article class="w-full rounded bg-gray-200 px-6 pt-2 dark:bg-[#102030]">
+	<div class="mt-1 flex items-center capitalize">
+		<a href="/blog" class="text-gray-400 transition hover:text-white">Blogs</a>
+		<ChevronRight class="mx-2 h-4 w-4" />
+		<span>{data.post.title}</span>
+	</div>
 
-<article class="w-full">
-	<div class="mt-12 flex w-full items-end justify-between">
+	<div class="mt-8 flex w-full items-end justify-between">
 		<div>
 			<h1 class="text-4xl">{data.post.title}</h1>
 			<p class="mt-4">{data.post.publishedAt}</p>
 		</div>
 		<span class="flex">
 			{data.post.pageView ?? 'loading'}
-			<Eye class="ml-2 text-gray-300" />
+			<Eye class="ml-2 text-gray-600 dark:text-gray-300" />
 		</span>
 	</div>
 

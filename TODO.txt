@@ -45,10 +45,15 @@
 19: Backup docker database [DONE]
 20: Breadcrumbs that shows current blog post name and the previous step which is the blog list [DONE]
 21: Show the blog post title and description + the views + category [DONE]
-22: The actual blog post, check how everything looks and make adjustments
+22: The actual blog post, check how everything looks and make adjustments [DONE]
+    a: Update background to pop a bit more [DONE]
 23: Create a like button, this should not require any authentication
 24: Create Oauth 
 25: Create comment section, and figure out how detailed it should be. (replies, likes etc.)
+-- Optimization
+26: Sitemap for SEO
+27: Create header tags with the correct data from posts etc. 
+28: Fix errors from lighthouse test
 
 
 (Optional)
