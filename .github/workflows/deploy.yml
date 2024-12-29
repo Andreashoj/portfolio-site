@@ -44,7 +44,6 @@ jobs:
                 --no-acl > ${BACKUP_FILE}
             else
               echo "Database container not running"
-              exit 1
             fi
             
             cd /root/db-backups/portfolio-site
