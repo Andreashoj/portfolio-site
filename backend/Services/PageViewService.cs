@@ -6,13 +6,13 @@ namespace backend.Services;
 
 public class PageViewService (AppDbContext context) : IPageViewService
 {
-    public async Task<List<BlogModel>> GetBatchAsync(string[] slugs)
+    public async Task<List<Blog>> GetBatchAsync(string[] slugs)
     {
         var existingBlogs = await context.Blogs.Where(b => slugs.Contains(b.Slug)).ToListAsync();
         var existingSlugs = existingBlogs.Select(b => b.Slug).ToHashSet();
         var missingSlugs = slugs.Where(slug => !existingSlugs.Contains(slug));
 
-        var newBlogs = missingSlugs.Select(slug => new BlogModel 
+        var newBlogs = missingSlugs.Select(slug => new Blog 
             { 
             Slug = slug,
             PageView = 0 
@@ -25,13 +25,13 @@ public class PageViewService (AppDbContext context) : IPageViewService
         return [.. existingBlogs, .. blogModels];
     }
     
-    public async Task<BlogModel> IncrementAsync(string slug)
+    public async Task<Blog> IncrementAsync(string slug)
     {
         var blogPost = await context.Blogs.FirstOrDefaultAsync(b => b.Slug == slug);
 
         if (blogPost is null)
         {
-            blogPost = new BlogModel
+            blogPost = new Blog
             {
                 Slug = slug,
                 PageView = 0

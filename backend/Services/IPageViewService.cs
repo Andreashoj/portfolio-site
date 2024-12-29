@@ -4,6 +4,6 @@ namespace backend.Services;
 
 public interface IPageViewService
 {
-    Task<List<BlogModel>> GetBatchAsync(string[] slug);
-    Task<BlogModel> IncrementAsync(string slug);
+    Task<List<Blog>> GetBatchAsync(string[] slug);
+    Task<Blog> IncrementAsync(string slug);
 }   

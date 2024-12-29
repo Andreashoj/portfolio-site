@@ -34,6 +34,7 @@ builder.Services.AddControllers();
 
 // Services
 builder.Services.AddScoped<IPageViewService, PageViewService>();
+builder.Services.AddScoped<IBlogService, BlogService>();
 
 var  MyAllowSpecificOrigins = "_myAllowSpecificOrigins";
 

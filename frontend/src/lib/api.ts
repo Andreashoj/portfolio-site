@@ -19,6 +19,10 @@ const createApiClient = (apiKey: string) => {
 				method: 'POST',
 				body: JSON.stringify(data)
 			}),
+		patch: (endpoint: string) =>
+			fetchWithConfig(endpoint, {
+				method: 'PATCH'
+			}),
 		delete: (endpoint: string) =>
 			fetchWithConfig(endpoint, {
 				method: 'DELETE'

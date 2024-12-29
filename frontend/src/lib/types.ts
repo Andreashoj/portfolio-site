@@ -7,6 +7,7 @@ interface SanityPost {
 	pageView?: number;
 	description?: string;
 	categories: Category[];
+	likes: number;
 }
 
 interface Slug {
@@ -18,10 +19,11 @@ interface PageData {
 	post: SanityPost;
 }
 
-interface PageView {
+interface Blog {
 	id: string;
 	slug: string;
 	pageView: number;
+	likes: number;
 }
 
 interface Category {
