@@ -14,6 +14,8 @@
 	}
 
 	async function incrementLikeCount() {
+		if (hasLiked) return;
+
 		const response = await api.patch(`/blogs/${data.post.slug.current}/likes`);
 		const result: Blog = await response.json();
 		data.post.likes = result.likes;
@@ -97,7 +99,10 @@
 		</span>
 
 		<span class="mr-2.5">{data.post.likes}</span>
-		<button on:click={incrementLikeCount} class="hover:opacity-75">
+		<button
+			on:click={incrementLikeCount}
+			class="hover:opacity-75 {hasLiked ? 'pointer-events-none' : ''}"
+		>
 			<Heart
 				fill={hasLiked ? '#ec4899' : 'none'}
 				color={hasLiked ? '#ec4899' : '#374151'}
