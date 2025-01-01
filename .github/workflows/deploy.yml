@@ -55,6 +55,11 @@ jobs:
             echo "DB_USER=${{ secrets.DB_USER }}" >> .env
             echo "DB_PASSWORD=${{ secrets.DB_PASSWORD }}" >> .env
             echo "DB_NAME=${{ secrets.DB_NAME }}" >> .env
+            echo "GOOGLE_CLIENT_ID=${{ secrets.GOOGLE_CLIENT_ID }}" >> .env
+            echo "GOOGLE_CLIENT_SECRET=${{ secrets.GOOGLE_CLIENT_SECRET }}" >> .env
+            echo "JWT_KEY=${{ secrets.JWT_KEY }}" >> .env
+            echo "JWT_ISSUER=${{ secrets.JWT_ISSUER }}" >> .env
+            echo "JWT_AUDIENCE=${{ secrets.JWT_AUDIENCE }}" >> .env
             
             docker compose down
             docker volume rm portfolio-site_static-files || true

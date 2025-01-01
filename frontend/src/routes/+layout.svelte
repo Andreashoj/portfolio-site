@@ -2,7 +2,14 @@
 	import '../app.css';
 	import Navbar from '$components/layout/Navbar.svelte';
 	import Footer from '$components/layout/Footer.svelte';
+	import { api } from '$lib/api';
+	import { user } from '$lib/stores/auth';
 	let { children } = $props();
+
+	function handleGoogleLogin() {
+		const returnUrl = window.location.href;
+		window.location.href = `http://localhost:5000/auth/google-login?returnUrl=${encodeURIComponent(returnUrl)}`;
+	}
 </script>
 
 <svelte:head>
@@ -29,5 +36,8 @@
 		</div>
 	</main>
 
+	{$user?.email}
+	{$user?.username}
+	<button on:click={handleGoogleLogin}>Login</button>
 	<Footer />
 </div>
