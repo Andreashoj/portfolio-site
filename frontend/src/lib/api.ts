@@ -1,15 +1,17 @@
 import { token } from '$lib/stores/auth';
+import { get } from 'svelte/store';
 
 const PUBLIC_API_KEY = import.meta.env.VITE_PUBLIC_API_KEY;
 
 const createApiClient = (apiKey: string) => {
 	const fetchWithConfig = (endpoint: string, options: RequestInit = {}) => {
+		const currentToken = get(token);
 		return fetch(`/api${endpoint}`, {
 			...options,
 			headers: {
 				'X-Api-Key': apiKey,
 				'Content-Type': 'application/json',
-				Authorization: token ? `Bearer ${token}` : '',
+				Authorization: currentToken ? `Bearer ${currentToken}` : '',
 				...options.headers
 			}
 		});
