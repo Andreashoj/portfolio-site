@@ -1,3 +1,5 @@
+import { token } from '$lib/stores/auth';
+
 const PUBLIC_API_KEY = import.meta.env.VITE_PUBLIC_API_KEY;
 
 const createApiClient = (apiKey: string) => {
@@ -7,6 +9,7 @@ const createApiClient = (apiKey: string) => {
 			headers: {
 				'X-Api-Key': apiKey,
 				'Content-Type': 'application/json',
+				Authorization: token ? `Bearer ${token}` : '',
 				...options.headers
 			}
 		});
