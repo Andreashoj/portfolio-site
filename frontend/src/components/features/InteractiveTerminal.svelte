@@ -47,33 +47,29 @@
 
 	const commands = {
 		help: () => `Available commands:
-• about - Learn about me
-• skills - View my technical skills
-• projects - See my main projects
-• contact - Get my contact info
-• clear - Clear the terminal
-• help - Show this message`,
+- about - Learn about me
+- skills - View my tech stack
+- contact - Get my contact info
+- clear - Clear the terminal
+- help - Show this message`,
 
 		about: () => `Hi, I'm Andreas! 👋
-A software developer passionate about building great user experiences.
-Type 'skills' to see what I work with or 'projects' to see what I've built.`,
+A full-stack developer specializing in Angular and Vue.js frontends with .NET backends.
+Currently building scalable web applications at Universal Robots.
+Type 'skills' to see my tech stack or 'projects' to explore my work.`,
 
-		skills: () => `Technical Skills:
-• Frontend: TypeScript, React, Svelte, TailwindCSS
-• Backend: Node.js, Python, SQL
-• Tools: Git, Docker, AWS
-• Currently learning: Rust 🦀`,
-
-		projects: () => `Recent Projects:
-• Project 1 - Description
-• Project 2 - Description
-• Project 3 - Description
-Type 'contact' to get in touch about collaborations!`,
+		skills: () => `Technical Expertise:
+- Frontend: Angular (RxJS, NgRx), Vue.js (Vuex, Pinia), TypeScript
+- Styling: TailwindCSS, SCSS, Material Design
+- Backend: .NET Core, C#, Entity Framework
+- Testing: Jest, Cypress, xUnit
+- Tools: Git, Azure, Docker
+- Currently exploring: Micro-frontends & Clean Architecture`,
 
 		contact: () => `Let's connect:
-• Email: your@email.com
-• GitHub: yourusername
-• LinkedIn: yourprofile`,
+- GitHub: github.com/andrashoj
+- LinkedIn: https://www.linkedin.com/in/andreas-h%C3%B8j-a9838514b/
+- Email: andrewhoj@gmail.com`,
 
 		clear: () => {
 			history = [];

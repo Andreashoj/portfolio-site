@@ -24,6 +24,15 @@
 
 				<span class="mx-2">+</span>
 
+				<div class="flex items-center">
+					<svg class="mr-1.5 h-4 w-4" role="img" viewBox="0 0 24 24">
+						<path d={siAngular.path} class="fill-gray-900 dark:fill-white" />
+					</svg>
+					<span class="underline">Angular</span>
+				</div>
+
+				<span class="mx-2">+</span>
+
 				<svg class="mr-1.5 h-4 w-4" role="img" viewBox="0 0 24 24">
 					<path d={siSvelte.path} class="fill-gray-900 dark:fill-white" />
 				</svg>
@@ -35,14 +44,6 @@
 					<path d={siVuedotjs.path} class="fill-gray-900 dark:fill-white" />
 				</svg>
 				<span class="underline">Vue</span>
-				<span class="mx-2">+</span>
-
-				<div class="flex items-center">
-					<svg class="mr-1.5 h-4 w-4" role="img" viewBox="0 0 24 24">
-						<path d={siAngular.path} class="fill-gray-900 dark:fill-white" />
-					</svg>
-					<span class="underline">Angular</span>
-				</div>
 			</div>
 		</li>
 
@@ -75,13 +76,6 @@
 					<path d={siNginx.path} class="fill-gray-900 dark:fill-white" />
 				</svg>
 				<span class="underline">Nginx</span>
-
-				<span class="mx-2">+</span>
-
-				<svg class="mr-1.5 h-4 w-4" role="img" viewBox="0 0 24 24">
-					<path d={siKubernetes.path} class="fill-gray-900 dark:fill-white" />
-				</svg>
-				<span class="underline">Kubernetes</span>
 			</div>
 		</li>
 	</ul>

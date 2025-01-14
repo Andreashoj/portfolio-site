@@ -3,19 +3,20 @@
 
 	const technicalGrowth = [
 		{
-			title: 'Frontend Focused',
-			period: '2020-2023',
-			skills: 'HTML • CSS • JavaScript • Vue'
+			title: 'Core Frontend',
+			period: '2020-2022',
+			skills: 'HTML5 • CSS3 • JavaScript ES6+ • DOM Manipulation • Responsive Design'
 		},
 		{
-			title: 'Full Stack Growth',
-			period: '2023-2024',
-			skills: 'Angular • Backend • Databases • APIs'
+			title: 'Framework Mastery & Backend',
+			period: '2022-2023',
+			skills: 'Vue.js • Vuex • Angular • RxJS • TypeScript • Component Architecture'
 		},
 		{
-			title: 'Architecture & DevOps',
+			title: 'Advanced Frontend & Devops',
 			period: '2024-Present',
-			skills: 'Cloud • CI/CD • System Design'
+			skills:
+				'Micro-frontends • Web Performance • Testing (Jest/Cypress) • State Management • Design Systems'
 		}
 	];
 
