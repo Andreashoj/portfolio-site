@@ -36,8 +36,5 @@
 		</div>
 	</main>
 
-	{$user?.email}
-	{$user?.username}
-	<button on:click={handleGoogleLogin}>Login</button>
 	<Footer />
 </div>
